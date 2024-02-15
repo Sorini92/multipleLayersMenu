@@ -1,0 +1,27 @@
+.menuItem {
+    color: red;
+    list-style: none;
+    padding-left: 30px;
+}
+
+.subMenu {
+    color: blue;
+    list-style: none;
+}
+
+.btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+.rotated {
+    transform: rotate(0.5turn);
+}
+
+.norotated {
+    transform: rotate(0.25turn);
+}
