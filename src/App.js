@@ -16,19 +16,25 @@ function App() {
 			.finally(setIsLoaded(true))
 	}), [])
 
-	const elements = services?.map((service, i) => {
-		if (!service.head) {
-			return <Layer key={i} service={service} services={services}/>
-		} 	
-	})
+	if (services && Array.isArray(services)) {
+		const elements = services.map((service, i) => {
+			if (!service.head) {
+				return <Layer key={i} service={service} services={services}/>
+			} 	
+		})
 
-	return (
-		<div className="App">
-			<ul className='list'>
-				{isLoaded ? elements : <div>Loading...</div>}
-			</ul>		
-		</div>
-	);
+		return (
+			<div className="App">
+				<ul className='list'>
+					{isLoaded ? elements : <div>Loading...</div>}
+				</ul>		
+			</div>
+		);
+	} else {
+		return (
+			<div>Неверный тип данных или данные не существоют</div>
+		)
+	}	
 }
 
 export default App;
